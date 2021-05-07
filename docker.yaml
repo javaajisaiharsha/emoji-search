@@ -1,12 +1,10 @@
 ---
 - hosts: harsha
   tasks:
-  - name: docker install
+  - name: docker pull
     become: true
     become_method: sudo
     become_user: root
-    shell:
-      cmd: sudo apt install docker.io -y
   - name: stating service
     shell:
       cmd: sudo systemctl start docker
