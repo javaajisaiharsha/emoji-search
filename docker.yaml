@@ -1,5 +1,5 @@
 ---
-- hosts: 54.177.180.155
+- hosts: harsha
   tasks:
   - name: docker pull
     become: true
