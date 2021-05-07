@@ -10,7 +10,7 @@
   - name: stating service
     shell:
       cmd: sudo systemctl start docker
-  - name: pulling nginx image
+  - name: pulling docker emoji-search
     shell:
       cmd: sudo docker pull javaajisaiharsha/emoji-search:v1
   - name: container run
