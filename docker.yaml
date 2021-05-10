@@ -1,5 +1,5 @@
 ---
-- hosts: saiharsha
+- hosts: harsha
   tasks:
   - name: docker pull
     become: true
