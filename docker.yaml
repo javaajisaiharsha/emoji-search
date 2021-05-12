@@ -5,7 +5,6 @@
     become: true
     become_method: sudo
     become_user: root
-  - name: stating service
     shell:
       cmd: sudo systemctl start docker
   - name: pulling docker emoji-search
