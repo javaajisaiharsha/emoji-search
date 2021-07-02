@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "Misbah-J/sample-app"
+    registry = "Misbah-J/emoji-search"
     registryCredential = 'dockerhub'
     KUBECONFIG="$JENKINS_HOME/.kube/config1"
   }
