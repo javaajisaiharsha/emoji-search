@@ -39,10 +39,11 @@ pipeline {
     stage('') {
       steps{
         sh '''
-            kubectl get deployments
-            kubectl get svc
+            kubectl get deployments -n $BRANCH_NAME
+            kubectl get svc -n $BRANCH_NAME
             '''
       }
     }
+    
     }
 }
