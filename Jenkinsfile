@@ -16,10 +16,22 @@ pipeline {
     }
    
 
-    stage('Creating Deployment') {
+  stage('Creating Deployment') {
       steps {
-        sh  '''
-            kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID
+    
+        sh  '''#!/bin/bash
+                
+                if [[ $GIT_BRANCH == "development" ]]
+                then
+                    kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME -n $BRANCH_NAME
+                elif [[ $GIT_BRANCH == "testing" ]]
+                then
+                    kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME -n $BRANCH_NAME
+                elif [[ $GIT_BRANCH == "master" ]]
+                then
+                    kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME -n production
+                   
+                fi         
             '''
       }
     }
