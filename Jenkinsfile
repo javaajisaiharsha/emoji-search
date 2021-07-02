@@ -21,15 +21,15 @@ pipeline {
     
         sh  '''#!/bin/bash
                 
-                if [[ $GIT_BRANCH == "development" ]]
+                if [[ $GIT_BRANCH == "misbah-dev" ]]
                 then
                     kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME -n $BRANCH_NAME
-                elif [[ $GIT_BRANCH == "testing" ]]
+                elif [[ $GIT_BRANCH == "misbah-testing" ]]
                 then
                     kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME -n $BRANCH_NAME
-                elif [[ $GIT_BRANCH == "master" ]]
+                elif [[ $GIT_BRANCH == "misbah-prod" ]]
                 then
-                    kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME -n production
+                    kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME -n misbah-prod
                    
                 fi         
             '''
