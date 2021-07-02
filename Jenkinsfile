@@ -11,7 +11,7 @@ pipeline {
         sh "printenv"
         sh "docker build -t misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME ."
        // sh "docker run -dp 80:80 riteshk03/emoji-search:$BUILD_ID-BRANCH_NAME"
-        sh "docker push misbah012/emoji-search:$BUILD_ID-BRANCH_NAME"
+        sh "docker push misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME"
       }
     }
    
