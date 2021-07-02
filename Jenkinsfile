@@ -1,17 +1,17 @@
 pipeline {
   environment {
-    registry = "minfy/sample-app"
+    registry = "Misbah-J/sample-app"
     registryCredential = 'dockerhub'
-    KUBECONFIG="$JENKINS_HOME/.kube/config2"
+    KUBECONFIG="$JENKINS_HOME/.kube/config1"
   }
   agent any
   stages {
     stage('Building image') {
       steps{
         sh "printenv"
-        sh "docker build -t riteshk03/emoji-search:$BUILD_ID ."
+        sh "docker build -t misbah012/emoji-search:$BUILD_ID ."
        // sh "docker run -dp 80:80 riteshk03/emoji-search:$BUILD_ID"
-        sh "docker push riteshk03/emoji-search:$BUILD_ID"
+        sh "docker push misbah012/emoji-search:$BUILD_ID"
       }
     }
    
@@ -19,7 +19,7 @@ pipeline {
     stage('Creating Deployment') {
       steps {
         sh  '''
-            kubectl set image deployment/my-app2.yaml httpd=riteshk03/emoji-search:$BUILD_ID
+            kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID
             '''
       }
     }
