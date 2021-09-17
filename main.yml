@@ -8,3 +8,7 @@
     - include_role:
         name: ansible
         tasks_from: ansible.yml
+        tasks:
+    - include_role:
+        name: add_devops_user
+        tasks_from: 
