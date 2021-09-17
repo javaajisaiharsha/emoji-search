@@ -6,6 +6,9 @@
     become_method: sudo
     become_user: root
     shell:
+      cmd: sudo apt install docker.io -y
+  - name: stating service
+    shell:
       cmd: sudo systemctl start docker
   - name: pulling docker emoji-search
     shell:
