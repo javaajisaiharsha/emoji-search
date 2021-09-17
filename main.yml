@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
+- hosts: 212.2.245.3
   become: true
   become_user: root
   gather_facts: false
