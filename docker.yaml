@@ -1,5 +1,5 @@
 ---
-- hosts: harsha
+- hosts: all
   tasks:
   - name: docker pull
     become: true
