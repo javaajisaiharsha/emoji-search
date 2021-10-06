@@ -2,7 +2,7 @@ pipeline {
   environment {
     registry = "Misbah-J/emoji-search"
     registryCredential = 'dockerhub'
-    KUBECONFIG="$JENKINS_HOME/.kube/config1"
+   // KUBECONFIG="$JENKINS_HOME/.kube/config1"
   }
   agent any
   stages {
